@@ -1,0 +1,46 @@
+name: Parallel Cypress Tests
+on: [push, pull_request]
+
+jobs:
+  parallel-tests:
+    name: Parallel (${{ matrix.browser }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false  # Don't stop other browsers if one fails
+      matrix:
+        browser: [chrome, firefox, edge]
+        containers: [1, 2, 3]  # Split tests across 3 machines
+    env:
+      CYPRESS_RETRIES: 1        # Auto-retry flaky tests
+      CYPRESS_parallel: true    # Enable Cypress parallelization
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/Cypress
+            node_modules
+          key: ${{ runner.os }}-cypress-${{ hashFiles('package-lock.json') }}
+          
+      - run: npm ci
+      
+      - run: |
+          npx cypress run \
+          --browser ${{ matrix.browser }} \
+          --headless \
+          --parallel \
+          --ci-build-id ${{ github.run_id }} \
+          --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
+          
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: ${{ matrix.browser }}-results-${{ matrix.containers }}
+          path: |
+            cypress/screenshots/**
+            cypress/videos/**
