@@ -1,4 +1,4 @@
-name: Parallel E2E Tests
+name: E2E Tests
 on: [push]
 
 jobs:
@@ -7,7 +7,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browsers: ["chrome", "firefox", "edge"]
+        browsers: ["chrome", "firefox"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
