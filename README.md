@@ -13,7 +13,7 @@ This Cypress Automation Framework provides comprehensive end-to-end (E2E) testin
  - Custom commands for reusable actions.
  - Environment management: For storage of sensitive data
  - Cross-Browser Testing: Supports Chrome, Firefox, Edge.
- - CI/CD Ready: Includes GitHub Actions workflow
+ - CI/CD Ready: Includes GitHub Actions workflow.
 
 ## Installation & Setup
 ### 1. Prerequisites
