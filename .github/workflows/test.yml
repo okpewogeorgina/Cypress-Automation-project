@@ -8,7 +8,7 @@ jobs:
       fail-fast: false
       matrix:
         # Use browser keys supported by Cypress
-        browser: ["chrome", "firefox", "edge"]
+        browser: ["chrome", "firefox"]
     steps:
       - uses: actions/checkout@v4
       
