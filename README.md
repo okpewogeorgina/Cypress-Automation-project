@@ -50,5 +50,39 @@ Dependencies were install through "npm install"
 - Timeout issues: Increase defaultCommandTimeout in cypress.config.js.
 - Browser conflicts: Clear cache with npx cypress cache clear.
 
+### CI/CD Integration with Parallel Testing
+This CI/CD workflow leverages GitHub Actions to execute Cypress end-to-end tests in parallel across multiple
+browsers, optimizing speed while ensuring comprehensive test coverage.
+
+### Key Features
+**Parallel Test Workflow Visualization**
+
+```mermaid
+%%{init: {'theme': 'neutral', 'fontFamily': 'Arial'}}%%
+graph LR
+    A[["Git Push/PR Trigger"]] --> B{Start CI Job}
+    B --> C[Ubuntu Runner]
+    C --> D[Install Node.js 18]
+    D --> E[Cache Dependencies]
+    E --> F[Parallel Test Matrix]
+    
+    F --> G1[Chrome Tests]
+    F --> G2[Firefox Tests]
+
+    
+    G1 --> H[Collect Results]
+    G2 --> H
+    
+    H --> I{{"Test Report"}}
+    I --> J1["✅ Passed"]
+    I --> J2["❌ Failed"]
+    
+    style A fill:#238636,color:white
+    style B fill:#6e7681,color:white
+    style C fill:#1f6feb,color:white
+    style F fill:#8957e5,color:white
+    style I fill:#2b3137,color:white
+```
+
 
  
