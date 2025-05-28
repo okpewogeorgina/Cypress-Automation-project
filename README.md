@@ -2,19 +2,19 @@
 ## Overview
 This Cypress Automation Framework provides comprehensive end-to-end (E2E) testing for AutomationExercise.com,
  a demo e-commerce platform. The framework validates critical user workflows, including:
-✅ User authentication (signup, login, account deletion)
-✅ Product management (search, cart operations, checkout)
-✅ Order processing (payment flows)
+# ✅ User authentication (signup, login, account deletion)
+# ✅ Product management (search, cart operations, checkout)
+# ✅ Order processing (payment flows)
 
 ## Built with the following features:
 
- ✅ BDD Approach: Tests written in Gherkin syntax.
- ✅ Page Object Model: Organized UI selectors and  actions.
- ✅ Modular Design: Reusable components and steps.
- ✅ Custom commands for reusable actions.
- ✅ Environment management: For storage of sensitive data
- ✅ Cross-Browser Testing: Supports Chrome, Firefox, Edge.
- ✅ CI/CD Ready: Includes GitHub Actions workflow
+ # ✅ BDD Approach: Tests written in Gherkin syntax.
+ # ✅ Page Object Model: Organized UI selectors and  actions.
+ # ✅ Modular Design: Reusable components and steps.
+ # ✅ Custom commands for reusable actions.
+ # ✅ Environment management: For storage of sensitive data
+ # ✅ Cross-Browser Testing: Supports Chrome, Firefox, Edge.
+ # ✅ CI/CD Ready: Includes GitHub Actions workflow
 
 ## Installation & Setup
 ### 1. Prerequisites
