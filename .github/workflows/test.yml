@@ -1,28 +1,17 @@
-name: Parallel E2E Tests
-on: [push]
+name: Cypress E2E testing
+
+on: push
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        # Use browser keys supported by Cypress
-        browser: ["chrome", "firefox"]
+  cypress-run:
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
         with:
-          node-version: 18
-          
-      - uses: actions/cache@v3
-        with:
-          path: |
-            ~/.cache/Cypress
-            node_modules
-          key: ${{ runner.os }}-cypress-${{ hashFiles('package-lock.json') }}
-          
-      - run: npm ci
-      
-      - run: npx cypress run --browser ${{ matrix.browser }} --headless
+          build: npm run build
+          start: npm start
