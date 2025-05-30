@@ -53,6 +53,9 @@ Dependencies were install through "npm install"
 ### CI/CD Integration with Parallel Testing
 This CI/CD workflow leverages GitHub Actions to execute Cypress end-to-end tests in parallel across multiple
 browsers, optimizing speed while ensuring comprehensive test coverage.
+### Video
+
+https://github.com/user-attachments/assets/badc0984-5eb1-474d-a718-49034687b808
 
 ### Key Features
 **Parallel Test Workflow Visualization**
