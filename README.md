@@ -84,5 +84,8 @@ graph LR
     style I fill:#2b3137,color:white
 ```
 
+Video 
+This is an mp4 video showing the Cypress automation working.
+https://github.com/user-attachments/assets/cb226ac4-f471-4ef1-afd7-30ea4fd9e625
 
  
