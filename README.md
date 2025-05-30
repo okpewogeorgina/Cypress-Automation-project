@@ -44,6 +44,9 @@ Dependencies were install through "npm install"
 
    - Open Cypress Test Runner (GUI Mode)
    "npx cypress open"
+### Video
+
+https://github.com/user-attachments/assets/badc0984-5eb1-474d-a718-49034687b808
 
 ## Troubleshooting
 - "Error: Module not found": Run npm install again.
